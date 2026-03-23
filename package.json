@@ -7,8 +7,12 @@
   },
   "files": [
     "bin/",
-    ".agents/skills/agentskit-*/",
-    ".claude/commands/"
+    ".agents/skills/agentskit-architect/",
+    ".agents/skills/agentskit-strategist/",
+    ".agents/skills/agentskit-evaluator/",
+    ".claude/commands/architect.md",
+    ".claude/commands/evaluate.md",
+    ".claude/commands/strategize.md"
   ],
   "keywords": [
     "agent",
