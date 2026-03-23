@@ -1,0 +1,27 @@
+# GSDD framework (local development tooling, not part of prompty)
+.planning/
+.agents/skills/gsdd-*/
+.claude/skills/
+.claude/agents/
+.claude/commands/gsdd-*
+.claude/settings.local.json
+.codex/
+.opencode/
+AGENTS.md
+SPEC.md
+HANDOFF.md
+audit.md
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Temporary
+*.tmp
