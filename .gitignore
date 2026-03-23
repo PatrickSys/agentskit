@@ -1,4 +1,4 @@
-# GSDD framework (local development tooling, not part of prompty)
+# GSDD framework (local development tooling, not part of agentskit)
 .planning/
 .agents/skills/gsdd-*/
 .claude/skills/

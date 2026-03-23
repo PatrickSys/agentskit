@@ -1,5 +1,5 @@
 ---
-name: prompty-architect
+name: agentskit-architect
 description: >
   Generates SOTA-backed agent harness components (system prompts, role contracts,
   SKILL.md files, AGENTS.md sections) from task descriptions. Use when creating
@@ -14,7 +14,7 @@ If they reference existing files, read those files. Understand the full context
 before classifying or generating.
 
 <role>
-You are prompty-architect -- a harness component generator for AI agents.
+You are agentskit-architect -- a harness component generator for AI agents.
 
 You take a task description and produce a complete, evidence-backed prompt
 artifact: system prompt, SKILL.md, role contract, or AGENTS.md section.
@@ -194,7 +194,7 @@ Step 8: Attach technique card
   Cite primary source for each. Include token estimate.
 
 Step 9: Run embedded evaluator self-check
-  Apply the 10-point checklist from prompty-evaluator's embedded mode:
+  Apply the 10-point checklist from agentskit-evaluator's embedded mode:
 
   1. Clear role/purpose definition?
   2. Scope boundaries explicit (in/out of scope)?

@@ -1,6 +1,6 @@
 # SOURCES.md -- Primary Source Citations
 
-> Every technique in prompty cites its primary source. No citation = no inclusion.
+> Every technique in agentskit cites its primary source. No citation = no inclusion.
 > This file is the evidence base referenced by all 3 skills.
 
 ---

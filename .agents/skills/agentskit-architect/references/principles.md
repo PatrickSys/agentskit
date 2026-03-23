@@ -162,4 +162,4 @@ Before delivering, verify:
 - 5-10 check items per artifact
 - Each item is binary (checkable yes/no)
 - Items reference specific concerns, not generic quality
-- For complex artifacts, embed the prompty-evaluator's 10-point checklist
+- For complex artifacts, embed the agentskit-evaluator's 10-point checklist

@@ -1,81 +1,52 @@
-# prompty
+# agentskit
 
-**The standard library for meta-prompting.**
+Agent skills for prompt engineering, context strategy, and quality evaluation.
 
-3 agent skills that encode meta-prompting knowledge from 28 primary sources -- Anthropic, OpenAI, Google, Manus, LangChain, ACE, GSD-Distilled, and more -- into reusable, evidence-backed, vendor-neutral components any AI coding agent can invoke.
+3 skills you install into your project. Your AI coding agent uses them to produce better prompts, system instructions, SKILL.md files, and context strategies — drawing on patterns from Anthropic, OpenAI, Google, and 25 other cited sources instead of improvising from training data.
 
-## Why
+## Install
 
-When you tell an AI agent "create a skill for X" or "write a system prompt for Y," the agent draws on its training data. Training data is a hypothesis, not a standard.
+```
+npx agentskit init
+```
 
-Prompty gives agents something better: curated, cited, battle-tested engineering patterns from the full March 2026 landscape. Every technique cites its primary source. No citation = no inclusion.
+Copies skills into `.agents/skills/` ([agentskills.io](https://agentskills.io) compatible) and Claude Code commands into `.claude/commands/`.
 
-Key insight from [SkillsBench](https://arxiv.org/abs/2602.12670) (Feb 2026): **self-generated skills provide no measurable benefit**, while focused expert-curated skills give +16.2pp average improvement across 86 tasks. Prompty encodes curated knowledge, not auto-generated patterns.
+Install specific skills:
+
+```
+npx agentskit init --skills architect,evaluator
+```
 
 ## Skills
 
-| Skill | What It Does | Claude Code |
+| Skill | What it does | Claude Code |
 |---|---|---|
-| **prompty-architect** | Generates system prompts, role contracts, SKILL.md files, AGENTS.md sections | `/architect <task>` |
-| **prompty-strategist** | Designs context engineering strategies (Write/Select/Compress/Isolate) | `/strategize <system>` |
-| **prompty-evaluator** | Reviews and scores prompts against SOTA quality criteria | `/evaluate <prompt>` |
+| **agentskit-architect** | Generates system prompts, SKILL.md files, role contracts | `/architect <task>` |
+| **agentskit-strategist** | Designs context engineering strategies (WSCI model) | `/strategize <system>` |
+| **agentskit-evaluator** | Scores prompts against quality criteria + SOTA compliance | `/evaluate <prompt>` |
 
-### prompty-architect
+### agentskit-architect
 
-Takes a task description and produces a complete harness component. Auto-detects output format (system prompt, SKILL.md, role contract, AGENTS.md section). Applies 5 structural principles (output contracts, scope boundaries, anti-patterns, input contracts, self-check) and selects from 10 tactical techniques by problem type (CoT, ReAct, Self-Refine, XML structure, progressive disclosure, etc.).
+Takes a task description and produces a complete harness component. Auto-detects format (system prompt, SKILL.md, role contract, AGENTS.md section). Applies structural principles and selects techniques by problem type.
 
-### prompty-strategist
+### agentskit-strategist
 
-Designs context engineering strategies using the WSCI model (Write/Select/Compress/Isolate). Covers what to persist, what to load, when to compress, and how to isolate context across agent boundaries. Includes token budgets, production considerations (KV-cache, context rot, caching), and implementation priority.
+Designs context strategies using Write/Select/Compress/Isolate. Covers what to persist, what to load, when to compress, how to isolate context across agent boundaries. Includes token budgets and production considerations.
 
-### prompty-evaluator
+### agentskit-evaluator
 
-Reviews any prompt artifact against 5 quality dimensions (Clarity, Specificity, Context Design, Completeness, Structure) and 13 SOTA compliance checks. Works standalone or embedded as a self-check within architect and strategist.
+Reviews prompt artifacts against 5 quality dimensions and 13 compliance checks. Works standalone or embedded as a self-check within other skills.
 
-## Installation
+## How it works
 
-### Any AI Agent (agentskills.io)
+These are [agentskills.io](https://agentskills.io) skills — structured Markdown files that AI coding agents load as instructions. When you invoke `/architect`, your agent reads the skill's SKILL.md, follows its algorithm, loads reference files as needed, and produces the artifact.
 
-Copy `.agents/skills/prompty-*` into your project:
+Every technique in the skills cites its primary source. The full list of 28 sources is in [SOURCES.md](SOURCES.md).
 
-```
-your-project/
-  .agents/
-    skills/
-      prompty-architect/
-      prompty-strategist/
-      prompty-evaluator/
-```
+## Manual install
 
-35+ platforms auto-discover skills in `.agents/skills/`, including Claude Code, Cursor, GitHub Copilot, Codex, Gemini CLI, OpenCode, and more.
-
-### Claude Code
-
-Copy both `.agents/skills/prompty-*` and `.claude/commands/` into your project for slash command access (`/architect`, `/strategize`, `/evaluate`).
-
-## How It Works
-
-1. **Architect** analyzes your task, classifies the output type, applies structural principles, selects tactical techniques, generates the artifact, and self-checks against evaluator criteria before delivering.
-
-2. **Strategist** assesses your system's context needs across 5 dimensions, designs a WSCI strategy, adds production considerations, and produces a token budget table.
-
-3. **Evaluator** scores artifacts on 5 quality dimensions (1-10 each), runs SOTA compliance checks, and provides top 3 improvements with before/after examples.
-
-Composition: `architect -> evaluate -> refine` or `strategist -> architect (informed by strategy) -> evaluate`.
-
-## Sources
-
-All 28 primary sources are documented in [SOURCES.md](SOURCES.md). Key sources include:
-
-- Anthropic: Claude Prompting Best Practices, Context Engineering, Claude Code Best Practices
-- OpenAI: GPT-5.4 Prompt Guidance, Harness Engineering
-- Google: Multi-Agent Design Patterns, Gemini 3 Guide
-- Research: Chain-of-Thought (Wei 2022), ReAct (Yao 2022), Self-Refine (Madaan 2023), ACE (ICLR 2026), SkillsBench (Feb 2026)
-- Production: Manus Context Engineering, LangChain WSCI Model, GSD-Distilled
-
-## Design
-
-See [SPEC.md](SPEC.md) for full design decisions, competitive landscape, and implementation rationale.
+Copy `.agents/skills/agentskit-*` into your project. For Claude Code, also copy `.claude/commands/`.
 
 ## License
 

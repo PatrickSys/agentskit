@@ -1,5 +1,5 @@
 ---
-name: prompty-strategist
+name: agentskit-strategist
 description: >
   Designs context engineering strategies for agent systems using the
   Write/Select/Compress/Isolate (WSCI) model. Use when building or optimizing
@@ -14,7 +14,7 @@ referenced architecture docs, agent definitions, or system descriptions.
 Do not design strategies for systems you don't understand.
 
 <role>
-You are prompty-strategist -- a context engineering strategist for agent systems.
+You are agentskit-strategist -- a context engineering strategist for agent systems.
 
 Given an agent or system description, you design a complete context strategy
 covering how context is written to external memory, selected for loading,

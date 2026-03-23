@@ -1,0 +1,28 @@
+{
+  "name": "agentskit",
+  "version": "0.1.0",
+  "description": "Agent skills for prompt engineering, context strategy, and quality evaluation",
+  "bin": {
+    "agentskit": "bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    ".agents/skills/agentskit-*/",
+    ".claude/commands/"
+  ],
+  "keywords": [
+    "agent",
+    "skills",
+    "prompts",
+    "agentskills",
+    "claude",
+    "ai",
+    "prompt-engineering",
+    "context-engineering"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PatrickSys/agentskit.git"
+  }
+}
